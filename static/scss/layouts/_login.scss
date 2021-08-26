@@ -1,0 +1,68 @@
+.login-page{
+    width: 100%;
+    height: 100vh;
+    @include flexbox(center,center,row);
+    background-color: #f1f1f1;
+    .login-box{
+        width: 350px;
+        height: auto;
+        background-color: #fff;
+        border-radius: 10px;
+        .container{
+            width: 320px;
+            margin: 20px auto;
+            text-align: center;
+            h2{
+                font-size: 30px;
+                margin-bottom: 30px;
+
+            }
+            form{
+                width: 100%;
+                height: auto;
+                .form-action{
+                    width: 100%;
+                    input{
+                        width: 100%;
+                        padding: 10px 6px;
+                        border-radius: 5px;
+                        outline: none;
+                        border:1px solid #a1a1a1;
+                        color: #a1a1a1;
+                        margin-bottom: 15px;
+                        font-size: 14px;
+                    }
+                }
+                .info{
+                    text-align: left;
+                    margin-bottom: 20px;
+                    p{
+                        font-size: 14px;
+                        a{
+                            color: $primary-blue;
+                        }
+                    }
+                }
+                button{
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 5px;
+                    border: none;
+                    color: #fff;
+                    cursor: pointer;
+                    background-color: $primary-black;
+                }
+            }
+        }
+        @media only screen and (max-width: 400px) {
+            &{
+                width: 90%;
+                .container{
+                    width: 90%;
+                    margin: 15px auto;
+                }
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<div class="login-page">
+    <div class="login-box">
+        <div class="container">
+            <h2>Sign Up</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-action">
+                    <input type="text" name="first_name" class="first_name" placeholder = "First name">
+                    <input type="text" name="last_name" class="last_name" placeholder = "Last name">
+
+                </div>
+                <div class="form-action">
+                    <input type="text" name="username" class="username" placeholder = "Username">
+
+                    <input type="email" name="email" class="email" placeholder = "Email">
+
+                </div>
+                <div class="form-action">
+                    {{form.password1}}
+                    {{form.password2}}
+
+
+                </div>
+                <div class="info">
+                    <p>Already Have an Account? <a href="#">Sign In</a> </p>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
