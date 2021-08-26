@@ -1,0 +1,36 @@
+{% load static %}
+<nav class="nav-bar">
+    <div class="wrapper">
+        <div class="nav-logo">
+            <h2>OctoNotes</h2>
+        </div>
+        <div class="nav-items">
+            <div class="profile-container">
+                <div class="user-info">
+                    <h4>Aakash Thapa</h4>
+                    <p>@aakash</p>
+                </div>
+                <div class="user-img">
+                    <img src="{% static 'image/profile.jpg' %}" alt="profileimg">
+                </div>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <div class="first">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Public Notes</a></li>
+                        <li><a href="#">Personal Notes</a></li>
+                    </div>
+                    <div class="last">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Setting</a></li>
+
+                        <li><a href="#">Logout</a></li>
+                    </div>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

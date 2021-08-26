@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "AvertaCy";
+    src: url("../../../static/fonts/AvertaCy/AvertaCY-Light.woff2");
+    font-weight: lighter;
+}
+@font-face {
+    font-family: "AvertaCy";
+    src: url("../../../static/fonts/AvertaCy/AvertaCY-Regular.woff2");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "AvertaCy";
+    src: url("../../../static/fonts/AvertaCy/AvertaCY-Semibold.woff2");
+    font-weight: 600;
+}
+
+$primary-font: "AvertaCy", sans-serif !important;

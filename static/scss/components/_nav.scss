@@ -1,0 +1,99 @@
+.nav-bar{
+    width: 100%;
+    height: 100px;
+    .wrapper{
+        position: relative;
+        width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        @include flexbox(space-between,center,row);
+        .nav-logo{
+            h2{
+                font-size: 20px;
+            }
+        }
+        .nav-items{
+            .profile-container{
+                width: auto;
+                height: auto;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                .user-info{
+                    margin-right: 7px;
+                    text-align: right;
+                    h2{
+                        font-size: 16px;
+                        font-weight: lighter;
+                    }
+                    p{
+                        font-size: 14px;
+                        color: $primary-gray;
+                    }
+                }
+                .user-img{
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        
+                    }
+                }
+            }
+            .nav-links{
+                position: absolute;
+                width: auto;
+                height: auto;
+                top: 120px;
+                right: 0;
+                border-radius: 5px;
+                display: none;
+                opacity: 0;
+                transition: .5s;
+                box-shadow: 0px 0px 10px rgba(133, 133, 133, 0.268);
+                ul{
+                    margin: 10px;
+                    padding: 10px;
+
+                    li{
+                        display: block;
+                        margin-bottom: 10px;
+                        a{
+                            width: 100%;
+                            height: 100%;
+                            padding: 10px;
+                            color: $primary-gray;
+                            transition: .5s ease;
+                            &:hover{
+                                color: $primary-black;
+                            }   
+                        }
+                        .last{
+
+                            li:last-child{
+                                margin-bottom: 0px;
+                            }
+                        }
+
+                    }
+
+
+                }
+                &.active{
+
+                    display: block;
+                }
+            }
+            
+
+        }
+        @media only screen and (max-width: 1250px) {
+            &{
+                width: 90%;
+            }
+        }
+    }
+}
