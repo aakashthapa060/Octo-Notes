@@ -11,7 +11,7 @@
                     <p>@{{request.user.username}}</p>
                 </div>
                 <div class="user-img">
-                    <img src="{% static 'image/profile.jpg' %}" alt="profileimg">
+                    <img src="{{request.user.profile.profile_pic.url}}" alt="profileimg">
                 </div>
             </div>
             <div class="nav-links">

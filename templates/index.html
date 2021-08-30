@@ -5,5 +5,37 @@ OctoNotes - Home
 {% endblock title %}
 
 {% block content %}
+<div class="noteDisplay">
+    {% for note in notes %}
+    <div class="noteCard">
+    
+        <div class="noteUser">
+            <p class="noteUserUsername">{{note.user}}</p>
+            <div class="info">
+                <p class="noteUserPubDate">{{note.pub_date}}</p>
+                {% if request.user == note.user %}
+                <div class="info-btn">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="noteDropDown">
+                    <a href="#">Edit</a>
+                    
+                    <a href="#">Delete</a>
+                </div>
+                {% endif %}
+            </div>
+        
+        </div>
+    
+        <div class="noteContent">
+            <h2>{{note.title}}</h2>
+            <p>{{note.content}}</p>
+        </div>
+    
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock content %}

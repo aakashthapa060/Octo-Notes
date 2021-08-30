@@ -146,6 +146,105 @@ ul, ol {
   }
 }
 
+.noteDisplay {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-template-rows: auto;
+}
+
+.noteDisplay .noteCard {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #d0d0d0;
+}
+
+.noteDisplay .noteCard .noteUser {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.noteDisplay .noteCard .noteUser .noteUserUsername {
+  font-size: 16px;
+}
+
+.noteDisplay .noteCard .noteUser .info {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.noteDisplay .noteCard .noteUser .info .noteUserPubDate {
+  font-size: 14px;
+  color: #696969;
+  margin-right: 10px;
+}
+
+.noteDisplay .noteCard .noteUser .info .info-btn {
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+
+.noteDisplay .noteCard .noteUser .info .info-btn div {
+  width: 4px;
+  height: 4px;
+  background-color: #696969;
+  margin-bottom: 2px;
+}
+
+.noteDisplay .noteCard .noteUser .info .noteDropDown {
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: auto;
+  height: auto;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px #b8b8b8;
+}
+
+.noteDisplay .noteCard .noteUser .info .noteDropDown a {
+  display: block;
+  padding: 7px 12px;
+  margin-bottom: 3px;
+  transition: .5s ease;
+  border-radius: 5px;
+}
+
+.noteDisplay .noteCard .noteUser .info .noteDropDown a:last-child {
+  margin-bottom: 0px;
+  background-color: #f34646;
+  color: #fff;
+}
+
+.noteDisplay .noteCard .noteUser .info .noteDropDown a:hover {
+  background-color: #ebebeb;
+}
+
+.noteDisplay .noteCard .noteUser .info .noteDropDown a:last-child:hover {
+  background-color: #e62121;
+}
+
+.noteDisplay .noteCard .noteContent h2 {
+  color: #5459ff;
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.noteDisplay .noteCard .noteContent p {
+  font-size: 16px;
+}
+
 .main-container {
   width: 1200px;
   min-height: 100px;
