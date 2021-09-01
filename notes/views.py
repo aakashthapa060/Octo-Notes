@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Note
+
 # Create your views here.
 
 def index(request):
@@ -9,3 +10,9 @@ def index(request):
         "notes": note
     }
     return render(request, "index.html",context)
+
+def delete_note(request, id):
+    note = Note.objects.get(pk = id)
+    note.delete()
+
+    return redirect("notes:index")

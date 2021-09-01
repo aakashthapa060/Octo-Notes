@@ -235,6 +235,10 @@ ul, ol {
   background-color: #e62121;
 }
 
+.noteDisplay .noteCard .noteUser .info .noteDropDown.noteDropDownActive {
+  display: block;
+}
+
 .noteDisplay .noteCard .noteContent h2 {
   color: #5459ff;
   font-size: 20px;
@@ -243,6 +247,16 @@ ul, ol {
 
 .noteDisplay .noteCard .noteContent p {
   font-size: 16px;
+}
+
+.noteDisplay .noteActive {
+  border: 2px solid #5459ff;
+}
+
+@media only scree and (max-width: 600px) {
+  .noteDisplay {
+    grid-template-columns: 1fr;
+  }
 }
 
 .main-container {

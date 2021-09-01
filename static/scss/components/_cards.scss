@@ -5,6 +5,7 @@
     grid-template-columns: repeat(3,1fr);
     grid-gap: 20px;
     grid-template-rows: auto;
+
     .noteCard{
         position: relative;
         width: 100%;
@@ -73,7 +74,11 @@
 
                     }
 
+                    &.noteDropDownActive{
+                        display: block;
+                    }
                 }
+                
             }
 
         }
@@ -86,6 +91,19 @@
             p{
                 font-size: 16px;
             }
+        }
+    }
+    .noteActive{
+        border: 2px solid $primary-blue;
+
+
+        
+
+    }
+    @media only scree and (max-width: 600px) {
+        &{
+            grid-template-columns: 1fr;
+
         }
     }
 }

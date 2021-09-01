@@ -6,9 +6,14 @@ OctoNotes - Home
 
 {% block content %}
 <div class="noteDisplay">
+    {% if notes %}
     {% for note in notes %}
-    <div class="noteCard">
-    
+        {% if request.user == note.user %}
+        <div class="noteCard noteActive">
+        {% else %}
+        <div class="noteCard">
+
+        {% endif %}
         <div class="noteUser">
             <p class="noteUserUsername">{{note.user}}</p>
             <div class="info">
@@ -22,7 +27,7 @@ OctoNotes - Home
                 <div class="noteDropDown">
                     <a href="#">Edit</a>
                     
-                    <a href="#">Delete</a>
+                    <a href="{% url 'notes:deleteNote' note.id %}">Delete</a>
                 </div>
                 {% endif %}
             </div>
@@ -36,6 +41,9 @@ OctoNotes - Home
     
     </div>
     {% endfor %}
+    {% else %}
+    <p> No Notes, Create Your First Note.... </p>
+    {% endif %}
 </div>
 
 {% endblock content %}
