@@ -146,16 +146,56 @@ ul, ol {
   }
 }
 
-.noteDisplay {
+.noteForm {
   width: 100%;
   height: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  grid-template-rows: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
 }
 
-.noteDisplay .noteCard {
+.noteForm form {
+  width: 500px;
+  box-shadow: 0px 0px 10px #d6d6d6;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.noteForm form .form-action {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.noteForm form .form-action input, .noteForm form .form-action select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #f8f8f8;
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.noteForm form button {
+  width: 100%;
+  height: 40px;
+  background-color: #2c2c2e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .noteForm {
+    margin-bottom: 50px;
+  }
+  .noteForm form {
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+.noteCard {
   position: relative;
   width: 100%;
   min-height: 100px;
@@ -165,42 +205,42 @@ ul, ol {
   box-shadow: 0px 0px 10px #d0d0d0;
 }
 
-.noteDisplay .noteCard .noteUser {
+.noteCard .noteUser {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
 }
 
-.noteDisplay .noteCard .noteUser .noteUserUsername {
+.noteCard .noteUser .noteUserUsername {
   font-size: 16px;
 }
 
-.noteDisplay .noteCard .noteUser .info {
+.noteCard .noteUser .info {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.noteDisplay .noteCard .noteUser .info .noteUserPubDate {
+.noteCard .noteUser .info .noteUserPubDate {
   font-size: 14px;
   color: #696969;
   margin-right: 10px;
 }
 
-.noteDisplay .noteCard .noteUser .info .info-btn {
+.noteCard .noteUser .info .info-btn {
   width: auto;
   height: auto;
   cursor: pointer;
 }
 
-.noteDisplay .noteCard .noteUser .info .info-btn div {
+.noteCard .noteUser .info .info-btn div {
   width: 4px;
   height: 4px;
   background-color: #696969;
   margin-bottom: 2px;
 }
 
-.noteDisplay .noteCard .noteUser .info .noteDropDown {
+.noteCard .noteUser .info .noteDropDown {
   display: none;
   position: absolute;
   top: 30px;
@@ -213,7 +253,7 @@ ul, ol {
   box-shadow: 0px 0px 4px #b8b8b8;
 }
 
-.noteDisplay .noteCard .noteUser .info .noteDropDown a {
+.noteCard .noteUser .info .noteDropDown a {
   display: block;
   padding: 7px 12px;
   margin-bottom: 3px;
@@ -221,42 +261,32 @@ ul, ol {
   border-radius: 5px;
 }
 
-.noteDisplay .noteCard .noteUser .info .noteDropDown a:last-child {
+.noteCard .noteUser .info .noteDropDown a:last-child {
   margin-bottom: 0px;
   background-color: #f34646;
   color: #fff;
 }
 
-.noteDisplay .noteCard .noteUser .info .noteDropDown a:hover {
+.noteCard .noteUser .info .noteDropDown a:hover {
   background-color: #ebebeb;
 }
 
-.noteDisplay .noteCard .noteUser .info .noteDropDown a:last-child:hover {
+.noteCard .noteUser .info .noteDropDown a:last-child:hover {
   background-color: #e62121;
 }
 
-.noteDisplay .noteCard .noteUser .info .noteDropDown.noteDropDownActive {
+.noteCard .noteUser .info .noteDropDown.noteDropDownActive {
   display: block;
 }
 
-.noteDisplay .noteCard .noteContent h2 {
+.noteCard .noteContent h2 {
   color: #5459ff;
   font-size: 20px;
   margin-bottom: 7px;
 }
 
-.noteDisplay .noteCard .noteContent p {
+.noteCard .noteContent p {
   font-size: 16px;
-}
-
-.noteDisplay .noteActive {
-  border: 2px solid #5459ff;
-}
-
-@media only scree and (max-width: 600px) {
-  .noteDisplay {
-    grid-template-columns: 1fr;
-  }
 }
 
 .main-container {
@@ -269,6 +299,31 @@ ul, ol {
 @media only screen and (max-width: 1250px) {
   .main-container {
     width: 90%;
+  }
+}
+
+.noteDisplay {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-template-rows: auto;
+}
+
+.noteDisplay .noteActive {
+  border: 2px solid #5459ff;
+}
+
+@media only screen and (max-width: 820px) {
+  .noteDisplay {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .noteDisplay {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

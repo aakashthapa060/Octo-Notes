@@ -17,9 +17,9 @@
             <div class="nav-links">
                 <ul>
                     <div class="first">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="{% url 'notes:index' %}">Home</a></li>
                         <li><a href="#">Public Notes</a></li>
-                        <li><a href="#">Personal Notes</a></li>
+                        <li><a href="{% url 'notes:personalNote' %}">Personal Notes</a></li>
                     </div>
                     <div class="last">
                         <li><a href="#">Profile</a></li>

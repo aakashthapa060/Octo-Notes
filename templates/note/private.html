@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Personal Post
+{% endblock title %}
+
+{% block content %}
+    <div class="noteDisplay">
+        {% if privatePost %}
+        {% for post in privatePost %}
+        <div class="noteCard noteActive">
+            <div class="noteUser">
+                <p class="noteUserUsername">{{post.user}}</p>
+                <div class="info">
+                    <p class="noteUserPubDate">{{post.pub_date}}</p>
+                    <div class="info-btn">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="noteDropDown">
+                        <a href="#">Edit</a>
+                        
+                        <a href="{% url 'notes:deleteNote' post.id %}">Delete</a>
+                    </div>
+                </div>
+            
+            </div>
+        
+            <div class="noteContent">
+                <h2>{{post.title}}</h2>
+                <p>{{post.content}}</p>
+            </div>
+            
+        </div>
+        {% endfor %}
+    {%else%}
+    <div class="classNoPost">
+        <p>No Note To Show</p>
+    </div>
+    {% endif %}
+    </div>
+
+{% endblock content %}

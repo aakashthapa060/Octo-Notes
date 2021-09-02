@@ -1,0 +1,33 @@
+.noteDisplay{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    grid-template-rows: auto;
+
+
+    .noteActive{
+        border: 2px solid $primary-blue;
+
+
+        
+
+    }
+    @media only screen and (max-width: 820px) {
+        &{
+            grid-template-columns: repeat(2,1fr);
+
+            // display: none;
+
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        &{
+            grid-template-columns: repeat(1,1fr);
+
+            // display: none;
+
+        }
+    }
+}

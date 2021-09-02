@@ -8,10 +8,16 @@ class Note(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=60)
     content = models.CharField(max_length=100)
+    privacyChoice = [
+        ("public", "public"),
+        ("private", "private"),
+
+    ]
+    privacy = models.CharField(max_length=7, choices=privacyChoice,default="public")
     pub_date = models.DateField(default= timezone.now, blank=True)
     
     def __str__(self):
         return f"{self.title} // {self.user}"
     
     class Meta:
-        ordering = ["pub_date"]
+        ordering = ["-pub_date"]

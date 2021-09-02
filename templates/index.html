@@ -5,9 +5,32 @@ OctoNotes - Home
 {% endblock title %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<div class="noteForm">
+    <form action="." method="POST">
+        {% csrf_token %}
+        <div class="form-action">
+            {{form.title}}
+
+        </div>
+        <div class="form-action">
+            {{form.content}}
+
+        </div>
+        <div class="form-action">
+            {{form.privacy}}
+        </div>
+        <button type="submit">Post</button>
+    </form>
+</div>
 <div class="noteDisplay">
-    {% if notes %}
+{% else%}
+<p>Please Login before Posting Anything</p>
+{% endif %}
+
+{% if notes %}
     {% for note in notes %}
+    {% if note.privacy == "public" %}
         {% if request.user == note.user %}
         <div class="noteCard noteActive">
         {% else %}
@@ -38,12 +61,15 @@ OctoNotes - Home
             <h2>{{note.title}}</h2>
             <p>{{note.content}}</p>
         </div>
-    
+        
     </div>
+    {% endif %}
     {% endfor %}
     {% else %}
-    <p> No Notes, Create Your First Note.... </p>
+        <p> No Notes, Create Your First Note.... </p>
     {% endif %}
 </div>
+
+
 
 {% endblock content %}
